@@ -2,7 +2,7 @@ services:
   - type: web
     name: cal-web
     plan: standard
-    repo: https://github.com/calcom/docker.git
+    repo: https://github.com/danieltamas/cal.com-docker.git
     dockerfilePath: ./Dockerfile.render
     env: docker
     envVars:
@@ -21,6 +21,6 @@ services:
       - key: CRON_API_KEY
         value: 0cc0e6c35519bba620c9360cfe3e68d0
 
-databases:
-  - name: cal-postgres
-    plan: basic-1gb
+#databases:
+#  - name: cal-postgres
+#    plan: basic-1gb
