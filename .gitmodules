@@ -1,4 +1,4 @@
-#[submodule "calcom"]
-#	path = calcom
-#	url = https://github.com/calcom/cal.com.git
-#	branch = main
+[submodule "calcom"]
+	path = calcom
+	url = https://github.com/danieltamas/cal.com.git
+	branch = dani
