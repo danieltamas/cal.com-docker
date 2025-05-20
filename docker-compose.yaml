@@ -8,7 +8,7 @@
 #    name: stack
 #    external: false
 
-services:
+# services:
 #  database:
 #    container_name: database
 #    image: postgres
@@ -25,6 +25,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
+        PAYMENT_AUTOMATIC_PAYMENT_METHODS: ${PAYMENT_AUTOMATIC_PAYMENT_METHODS}
+        PAYMENT_METHOD_TYPES: ${PAYMENT_METHOD_TYPES}
         NEXT_PUBLIC_WEBAPP_URL: ${NEXT_PUBLIC_WEBAPP_URL}
         NEXT_PUBLIC_API_V2_URL: ${NEXT_PUBLIC_API_V2_URL}
         NEXT_PUBLIC_LICENSE_CONSENT: ${NEXT_PUBLIC_LICENSE_CONSENT}
@@ -41,6 +43,8 @@ services:
       - 127.0.0.1:3987:3000
     env_file: .env
     environment:
+      - PAYMENT_AUTOMATIC_PAYMENT_METHODS=${PAYMENT_AUTOMATIC_PAYMENT_METHODS}
+      - PAYMENT_METHOD_TYPES=${PAYMENT_METHOD_TYPES}
       - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}/${POSTGRES_DB}
       - DATABASE_DIRECT_URL=${DATABASE_URL}
 #    depends_on:
