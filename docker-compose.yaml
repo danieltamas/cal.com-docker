@@ -8,7 +8,7 @@
 #    name: stack
 #    external: false
 
-# services:
+services:
 #  database:
 #    container_name: database
 #    image: postgres
